@@ -1,3 +1,5 @@
+import axios from "axios";
+
 export async function scrapeAmazonProduct(url: string) {
   if (!url) return;
 
@@ -15,5 +17,13 @@ export async function scrapeAmazonProduct(url: string) {
       password,
     },
     host: "brd.superproxy.io",
+    port,
+    rejectUnauthorized: false,
   };
+  try {
+    const response = await axios.get(url, options)
+  } catch (error: any) {
+    throw new Error(`Failed to scrape product: ${error.message}`)
+
+  }
 }
