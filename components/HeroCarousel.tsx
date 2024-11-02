@@ -19,8 +19,7 @@ const HeorCarousel = () => {
         showThumbs={false}
         autoPlay
         infiniteLoop
-        interval={2000}
-        showArrows={false}
+        interval={2000}    showArrows={false}
         showStatus={false}
       >
         {heroImages.map((item) => (
