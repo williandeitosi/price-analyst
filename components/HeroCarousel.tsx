@@ -20,7 +20,7 @@ const HeorCarousel = () => {
         autoPlay
         infiniteLoop
         interval={2000}
-    showArrows={false}
+        showArrows={false}
         showStatus={false}
       >
 
