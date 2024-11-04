@@ -51,7 +51,7 @@ export async function scrapeAmazonProduct(url: string) {
       .text()
       .trim()
       .replace(/[-%]/g, "");
-
+    const lowestPrice = (Number(originalPrice) - Number(currentPrice)).toFixed(2)
     const data = {
       url,
       priceSymbol,
@@ -65,6 +65,8 @@ export async function scrapeAmazonProduct(url: string) {
       reviewsCount: 100,
       stars: 4.5,
       isOutOfStock: outOfStock,
+      highestPrice: Number(originalPrice),
+      lowestPrice: Number(lowestPrice)
       // continue
     };
 
